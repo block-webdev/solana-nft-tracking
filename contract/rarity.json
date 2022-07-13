@@ -1,0 +1,262 @@
+{
+    "partial": false,
+    "collection": {
+        "id": "snuggle_squad",
+        "image": "https://bafybeihk36iojmstpycljpm34zuduthrkw37xllk5r5nofemtxejd5nppi.ipfs.dweb.link/130.png?ext=png",
+        "name": "Snuggle Squad",
+        "description": "A collection of 7,777 Iguanas sent to snuggle on Solana.",
+        "verified_collection_address": null,
+        "pieces": 7777,
+        "provenance": [
+            {
+                "address": "Fw5cYoYGMbM6ovqLJocMZpZBYCidYgdUwmjEXC6Su99Z",
+                "type": "mint"
+            }
+        ],
+        "sealed": false,
+        "verified": false,
+        "tags": null,
+        "metadata": {
+            "private": false,
+            "shadow": false,
+            "access_key": "",
+            "go_live_at": "0001-01-01T00:00:00Z",
+            "api_block": false
+        }
+    },
+    "crawl": {
+        "id": "snuggle_squad",
+        "created": "2022-06-20T17:38:10.138157Z",
+        "updated": "2022-06-20T17:38:19.591919Z",
+        "first_mint_ts": 1655576206,
+        "last_mint_ts": 1655650423,
+        "first_mint": "54tNXd8FvzdQt5aW55fBpgnFn7f5a9CatpvPbWDTgCYp",
+        "last_mint": "6d9HtbkAL19VC9m86w957dpzkpmoBna8A1aHe1CgXqtH",
+        "until_tx": "",
+        "until_slot": 0,
+        "expected_pieces": 7777,
+        "seen_pieces": 7777,
+        "last_crawl_id": 1538939159266484224,
+        "complete": true,
+        "blocked": false,
+        "unblock_at_ts": 0
+    },
+    "mints": [
+        {
+            "crawl_id": 1538229214892285952,
+            "mint": "ASWz1GhR5511nvSxzvnpqYy1qdZJNho1UGYRX3DyF7k1",
+            "name": "The Snuggle Squad #0",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeiclbwxqoq2tsiud347i7ch6wngzee6n7sp3oopiw4yrzhlizrysti/113.png",
+            "created": 1655577170,
+            "rank": 35,
+            "rarity": 4.447818128797488e-24,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "black",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538241544795738112,
+            "mint": "FsJu2FAv1DZbrjyJuh7B1jLCtyXxprwMk7N9PHdUvkWy",
+            "name": "The Snuggle Squad #727",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeifnknj7m6jy6plwss4zjknqwlo55fvspohlf7qm4ugysdykojqed4/726.png",
+            "created": 1655580274,
+            "rank": 20,
+            "rarity": 4.447818128797488e-24,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "blue",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "DLyVGk1bRXdhATFNmKfqJ5iq3nsLHJvxLnSZqZt51JsU",
+            "name": "The Snuggle Squad #5047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 12,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "green",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "5hMbrtPNbVviHM8RyqJ2ccwxuqaMpCXSijBKYHG6PXiY",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 8,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "G9GJkddjurqM9RdRZz2fsBQpa7beTAK2mogfPkQXNU4a",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 1,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "HHEY8aPBhQ4Uy3oum2oVRuE7f3eduscXX5firZU2eH67",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 41,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "2S5Mog3Eugq33GX4Ut7kXjHJZmhESuJMCPwArJTmLmTA",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 15,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "8hggKhBbfsozCmpMCc3sriqsn5P2E7Z5gMv7NpCfjTkV",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 16,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "9UnwwUNFhqmQsrrxyA5dbF4CZ4K8F2Fvfo4dHCweBhW8",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 11,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "CrsQSPRg1bBdYg7xzTGUkQjQR8TYL7pnUk5tHf1TNfMi",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 12,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "GubP4NmBrfMSME147jish3pE7EZELgucd74au8MfGqxn",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 6,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        },
+        {
+            "crawl_id": 1538245393124184064,
+            "mint": "BpnPFY7KJPRiyGY6Mpq5CiVBTDoGW28pnGxdQGvp9AEN",
+            "name": "The Snuggle Squad #4047",
+            "image": "https://ipfs.fleek.co/ipfs/bafybeidkxwwf43vowbfv2ezcvx7lfz2ohwavj2ihh65oxrg32tyo6yzkgy/5046.png",
+            "created": 1655581233,
+            "rank": 1,
+            "rarity": 1.6799409072468114e-20,
+            "rank_explain": [
+                {
+                    "attribute": "Background",
+                    "value": "red",
+                    "value_perc": 0.012858428700012858,
+                    "times_seen": 1,
+                    "total_seen": 7777
+                }
+            ]
+        }
+    ]
+}
