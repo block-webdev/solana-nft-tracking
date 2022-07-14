@@ -40,7 +40,7 @@ export const NFT_CREATOR = new PublicKey(
 export const PROGRAM_ID = new PublicKey(
     IS_MAINNET ? 
     "6RhXNaW1oQYQmjTc1ypb4bEFe1QasPAgEfFNhQ3HnSqo" : 
-    "CJVagfV4sLoC2m5wfoYtbQhDUznQuBrb8GQXoEhb1SBt"
+    "53s2V3Kf3kvweqvHUTeKbAVeKVrZoK331QG58VczG6i5"
 )
 
 export const INITIALIZER = new PublicKey(

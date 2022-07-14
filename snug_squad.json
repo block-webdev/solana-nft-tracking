@@ -203,32 +203,6 @@
       "args": []
     },
     {
-      "name": "cancelStakedNft",
-      "accounts": [
-        {
-          "name": "admin",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "poolAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "nftStakeInfoAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "nftMint",
-          "isMut": false,
-          "isSigner": false
-        }
-      ],
-      "args": []
-    },
-    {
       "name": "claimReward",
       "accounts": [
         {
@@ -652,6 +626,6 @@
     }
   ],
   "metadata": {
-    "address": "CJVagfV4sLoC2m5wfoYtbQhDUznQuBrb8GQXoEhb1SBt"
+    "address": "BaawHHQoLNMoPphTuBibvsf8WpBMEy3TZG7vKf9TT3nT"
   }
 }

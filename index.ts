@@ -18,7 +18,7 @@ import { TOKEN_PROGRAM_ID, getAccount, getAssociatedTokenAddress, getOrCreateAss
 import { BN } from '@project-serum/anchor'
 import { BigNumber } from "bignumber.js";
 
-import { getStakedInfo, cancelStakedNft } from "./contract/nft-staking";
+import { getStakedInfo, unstakeOneNftInDaemon } from "./contract/nft-staking";
 import { bs58 } from '@project-serum/anchor/dist/cjs/utils/bytes';
 import NodeWallet from "@project-serum/anchor/dist/cjs/nodewallet";
 
@@ -65,15 +65,15 @@ async function checkOneNft(stakeInfo: any) {
     console.log('moved nft owner', stakeInfo.account.owner.toBase58());
 
     try {
-        let tx = await cancelStakedNft(wallet, connection, stakeInfo.publicKey, stakeInfo.account.nftAddr);
-        console.log('cancelStakedNft tx ', tx);
+        let tx = await unstakeOneNftInDaemon(wallet, connection, stakeInfo.publicKey, stakeInfo.account.nftAddr);
+        console.log('unstake nft ', tx);
     } catch (error) {
         console.log('cancelling error', error);
     }
 }
 
 function scheduleBlockLoop() {
-    //setTimeout(trackingStakedNfts, 10 * 1000);
+    setTimeout(trackingStakedNfts, 10 * 1000);
 }
 
 let counter = 0;
@@ -82,6 +82,7 @@ async function trackingStakedNfts() {
 
     let stakedNfts = await getStakedInfo(wallet, connection);
     stakedNfts.forEach(stakeInfo => {
+        console.log('staked nfts', stakeInfo.account.nftAddr.toBase58());
         checkOneNft(stakeInfo);
     });
 

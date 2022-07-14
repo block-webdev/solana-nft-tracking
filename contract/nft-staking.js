@@ -147,6 +147,28 @@ export const stakeNft = async (wallet, connection, selectedNftMint, poolID) => {
     return res;
 }
 
+export const unstakeOneNftInDaemon = async (wallet, connection, stakeInfoPk, nftMint) => {
+    // console.log("On Unstake NFT");
+    const program = getProgram(wallet, connection);
+    try {
+        const ix = await program.methods.withdrawNft().accounts({
+            owner: wallet.publicKey,
+            poolAccount: await getPoolKey(),
+            nftMint: nftMint,
+            nftStakeInfoAccount: stakeInfoPk,
+        })
+        .signers([wallet.payer])
+        .rpc();
+        
+        console.log('txHash =', ix);
+        return ix;
+    } catch (error) {
+        console.log('daemon withdraw error', error);
+    }
+
+    return null;
+}
+
 export const unstakeNft = async (wallet, connection, selectedNftMint) => {
     // console.log("On Unstake NFT");
     const program = getProgram(wallet, connection);
@@ -159,15 +181,7 @@ export const unstakeNft = async (wallet, connection, selectedNftMint) => {
             owner: wallet.publicKey,
             poolAccount: await getPoolKey(),
             nftMint: nftMintPk,
-            userNftTokenAccount: await getTokenAccount(connection, nftMintPk, wallet.publicKey),
-            stakedNftTokenAccount: await getStakedNFTKey(nftMintPk),
             nftStakeInfoAccount: await getStakeInfoKey(nftMintPk),
-            rewardToAccount: await getAssociatedTokenAccount(wallet.publicKey, REWARD_TOKEN_MINT),
-            rewardVault: await getRewardVaultKey(),
-            rewardMint: REWARD_TOKEN_MINT,
-            rent: SYSVAR_RENT_PUBKEY,
-            systemProgram: SystemProgram.programId,
-            tokenProgram: TOKEN_PROGRAM_ID,
         }).instruction();
         instructions.push(ix);
         // console.log("Your transaction signature", res);
@@ -177,21 +191,6 @@ export const unstakeNft = async (wallet, connection, selectedNftMint) => {
     let res = await sendMultiTransactions(connection, wallet, instructionSet);
     // console.log('txHash =', res);
     return res;
-}
-
-export const cancelStakedNft = async (wallet, connection, stakedInfoKey, nftMint) => {
-    const program = getProgram(wallet, connection);
-
-    const ix = await program.methods.cancelStakedNft().accounts({
-        owner: wallet.publicKey,
-        poolAccount: await getPoolKey(),
-        nftStakeInfoAccount: stakedInfoKey,
-        nftMint: nftMint,
-    })
-    .signers([wallet.payer])
-    .rpc();
-
-    return ix;
 }
 
 export const getRewardTokenBalance = async (wallet, connection) => {
@@ -300,7 +299,7 @@ export const getClaimableReward = (params) => {
 
 export const getStakedInfo = async (wallet, connection) => {
     const program = getProgram(wallet, connection);
-    const res = await program.account.stakeInfo.all(
+    let res = await program.account.stakeInfo.all(
         [
             {
                 memcmp: {
@@ -310,6 +309,9 @@ export const getStakedInfo = async (wallet, connection) => {
             }
         ]
     );
+
+    res = res.filter(ele => ele.account.isUnstaked == 0);
+
     // console.log("Staked info : ", res);
     return res;
 }
