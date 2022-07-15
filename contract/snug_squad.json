@@ -68,6 +68,10 @@
               5
             ]
           }
+        },
+        {
+          "name": "rewardDecimal",
+          "type": "u32"
         }
       ]
     },
@@ -399,6 +403,27 @@
           "type": "publicKey"
         }
       ]
+    },
+    {
+      "name": "closeStakeInfo",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "nftStakeInfoAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
     }
   ],
   "accounts": [
@@ -431,6 +456,10 @@
           {
             "name": "rewardMint",
             "type": "publicKey"
+          },
+          {
+            "name": "rewardDecimal",
+            "type": "u32"
           },
           {
             "name": "rewardVault",
@@ -559,6 +588,6 @@
     }
   ],
   "metadata": {
-    "address": "53s2V3Kf3kvweqvHUTeKbAVeKVrZoK331QG58VczG6i5"
+    "address": "2dw47d5KvhgyiKtAhJhJGn2d3RbfqD1QBk6qZT8NERbg"
   }
 }

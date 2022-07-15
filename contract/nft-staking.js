@@ -297,6 +297,23 @@ export const getClaimableReward = (params) => {
     return reward.toFixed(2);
 }
 
+export const getAllStakedInfo = async (wallet, connection) => {
+    const program = getProgram(wallet, connection);
+    let res = await program.account.stakeInfo.all();
+
+    let stakedInfo = [], unStakedInfo = [];
+    res.forEach(ele => {
+        if (ele.account.isUnstaked == 1) {
+            unStakedInfo.push(ele);
+        } else {
+            stakedInfo.push(ele);
+        }
+    });
+
+    console.log("Staked info : ", res);
+    return { stakedInfo: stakedInfo, unStakedInfo: unStakedInfo };
+}
+
 export const getStakedInfo = async (wallet, connection) => {
     const program = getProgram(wallet, connection);
     let res = await program.account.stakeInfo.all(
@@ -310,10 +327,17 @@ export const getStakedInfo = async (wallet, connection) => {
         ]
     );
 
-    res = res.filter(ele => ele.account.isUnstaked == 0);
+    let stakedInfo = [], unStakedInfo = [];
+    res.forEach(ele => {
+        if (ele.account.isUnstaked == 1) {
+            unStakedInfo.push(ele);
+        } else {
+            stakedInfo.push(ele);
+        }
+    });
 
-    // console.log("Staked info : ", res);
-    return res;
+    console.log("Staked info : ", res);
+    return { stakedInfo: stakedInfo, unStakedInfo: unStakedInfo };
 }
 
 const getNftTokenId = async (tokenURI) => {

@@ -21,7 +21,6 @@ export const RS_VAULT_SEED = "snuggle-squad-vault";
 export const CLASS_TYPES = [10, 15, 25];
 export const LOCK_DAY = [0, 14, 30];
 export const REWARDS_BY_RARITY = [0, 3, 6, 10, 15];
-export const TOKEN_DECIMALS = 9;
 
 /** NFT Staking Constant */
 
@@ -40,7 +39,7 @@ export const NFT_CREATOR = new PublicKey(
 export const PROGRAM_ID = new PublicKey(
     IS_MAINNET ? 
     "6RhXNaW1oQYQmjTc1ypb4bEFe1QasPAgEfFNhQ3HnSqo" : 
-    "53s2V3Kf3kvweqvHUTeKbAVeKVrZoK331QG58VczG6i5"
+    "2dw47d5KvhgyiKtAhJhJGn2d3RbfqD1QBk6qZT8NERbg"
 )
 
 export const INITIALIZER = new PublicKey(

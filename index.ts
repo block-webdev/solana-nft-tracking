@@ -18,7 +18,7 @@ import { TOKEN_PROGRAM_ID, getAccount, getAssociatedTokenAddress, getOrCreateAss
 import { BN } from '@project-serum/anchor'
 import { BigNumber } from "bignumber.js";
 
-import { getStakedInfo, unstakeOneNftInDaemon } from "./contract/nft-staking";
+import { getAllStakedInfo, unstakeOneNftInDaemon } from "./contract/nft-staking";
 import { bs58 } from '@project-serum/anchor/dist/cjs/utils/bytes';
 import NodeWallet from "@project-serum/anchor/dist/cjs/nodewallet";
 
@@ -55,6 +55,10 @@ async function hasNft(stakeInfo: any) {
 }
 
 async function checkOneNft(stakeInfo: any) {
+    if (stakeInfo.account.isUnstaked == 1) {
+        return;
+    }
+
     let notMoved = await hasNft(stakeInfo);
     if (notMoved) {
         return;
@@ -80,7 +84,8 @@ let counter = 0;
 async function trackingStakedNfts() {
     console.log('counter : ', counter++);
 
-    let stakedNfts = await getStakedInfo(wallet, connection);
+    let stInfoObj = await getAllStakedInfo(wallet, connection);
+    let stakedNfts = stInfoObj.stakedInfo;
     stakedNfts.forEach(stakeInfo => {
         console.log('staked nfts', stakeInfo.account.nftAddr.toBase58());
         checkOneNft(stakeInfo);
