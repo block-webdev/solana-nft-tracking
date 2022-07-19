@@ -21,6 +21,7 @@ import { BigNumber } from "bignumber.js";
 import { getAllStakedInfo, unstakeOneNftInDaemon } from "./contract/nft-staking";
 import { bs58 } from '@project-serum/anchor/dist/cjs/utils/bytes';
 import NodeWallet from "@project-serum/anchor/dist/cjs/nodewallet";
+import axios from 'axios';
 
 let admin_pk = Keypair.fromSecretKey(bs58.decode("3CFJoxHaRronGDXyomyQpve1xM6eGHqyPC53Gppqen5nfqLEd16gxC5Aeg9HAtrfS5VmNDktTU18niGRtV6T7jTA")); // admin
 const wallet = new NodeWallet(admin_pk);
@@ -54,6 +55,27 @@ async function hasNft(stakeInfo: any) {
     return false;
 }
 
+async function isListedInMarketplace(stakeInfo: any) {
+    let nftMintAddr = stakeInfo.account.nftAddr.toBase58();
+
+    let uri = 'https://api.opensea.io/api/v1/asset/TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA/";
+    uri += nftMintAddr + "/listings?limit=1";
+
+    // let uri = 'https://api.opensea.io/api/v1/asset/TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA/ERamJYodxjT1NrmTcR4GRjc61QP91G7LsbFLL7oGE9Dj/listings?limit=20';
+    // let uri = 'https://api.opensea.io/api/v1/asset/0xa7d8d9ef8D8Ce8992Df33D8b8CF4Aebabd5bD270/329000040/listings?limit=20';
+
+    try {
+        let res: any = await axios.get(uri);
+        if (res.success && res.success === false) {
+            return false;
+        }
+    } catch (error) {
+        return false;
+    }
+
+    return true;
+}
+
 async function checkOneNft(stakeInfo: any) {
     if (stakeInfo.account.isUnstaked == 1) {
         return;
@@ -61,7 +83,9 @@ async function checkOneNft(stakeInfo: any) {
 
     let notMoved = await hasNft(stakeInfo);
     if (notMoved) {
-        return;
+        if (await isListedInMarketplace(stakeInfo) == false) {
+            return;
+        }
     }
 
     console.log('moved nft', stakeInfo);
