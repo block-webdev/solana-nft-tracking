@@ -89,12 +89,7 @@
           "isSigner": false
         },
         {
-          "name": "userNftTokenAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "destNftTokenAccount",
+          "name": "userState",
           "isMut": true,
           "isSigner": false
         },
@@ -105,11 +100,6 @@
         },
         {
           "name": "nftMint",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenProgram",
           "isMut": false,
           "isSigner": false
         },
@@ -145,6 +135,11 @@
         },
         {
           "name": "poolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userState",
           "isMut": true,
           "isSigner": false
         },
@@ -197,6 +192,62 @@
         {
           "name": "nftMint",
           "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "claimPendingReward",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "poolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rewardVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rewardMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rewardToAccount",
+          "isMut": true,
           "isSigner": false
         },
         {
@@ -526,9 +577,21 @@
           {
             "name": "isUnstaked",
             "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "user",
+            "type": "publicKey"
           },
           {
-            "name": "reward",
+            "name": "pendingReward",
             "type": "u64"
           }
         ]
@@ -588,6 +651,6 @@
     }
   ],
   "metadata": {
-    "address": "2dw47d5KvhgyiKtAhJhJGn2d3RbfqD1QBk6qZT8NERbg"
+    "address": "41dEpuTriLhSyqL4HUAtEgzJ2eF4M5USxKW2xgMTaFZ5"
   }
 }

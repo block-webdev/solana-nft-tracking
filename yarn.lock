@@ -126,6 +126,13 @@
     lodash.chunk "^4.2.0"
     lodash.orderby "^4.6.0"
 
+"@opensea/stream-js@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@opensea/stream-js/-/stream-js-0.0.20.tgz#bc269a4443d912ed919c489878e5a6f36687d80f"
+  integrity sha512-T37byKLuvFRitiS4Au8gOnJGx9r9pDy2EesHoDNmtV9J1euZF5BJvZ/yfMrHhA7LmqV9+xbprTIObuJvgTp+OA==
+  dependencies:
+    phoenix "^1.6.2"
+
 "@pedrouid/environment@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@pedrouid/environment/-/environment-1.0.1.tgz#858f0f8a057340e0b250398b75ead77d6f4342ec"
@@ -2427,6 +2434,11 @@ pbkdf2@^3.0.17, pbkdf2@^3.0.3:
     ripemd160 "^2.0.1"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+phoenix@^1.6.2:
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.6.11.tgz#e29c3658c8fd6ba509e87130d2b1b20adc6a9a53"
+  integrity sha512-z/MSg9yY20JhTSj6tKmOYE9p+PuU+FVstYtgBfIZPGNLKhSuV9Zcs9LLLKWeiJ9EUzaXS/QeO8Po4+jJnyNfMw==
 
 pidtree@^0.3.0:
   version "0.3.1"

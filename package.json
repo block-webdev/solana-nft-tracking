@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@nfteyez/sol-rayz": "^0.10.2",
+    "@opensea/stream-js": "^0.0.20",
     "@project-serum/anchor": "^0.24.2",
     "@solana/spl-token": "^0.2.0",
     "@solana/wallet-adapter-base": "^0.9.5",

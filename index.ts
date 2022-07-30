@@ -22,6 +22,11 @@ import { getAllStakedInfo, unstakeOneNftInDaemon } from "./contract/nft-staking"
 import { bs58 } from '@project-serum/anchor/dist/cjs/utils/bytes';
 import NodeWallet from "@project-serum/anchor/dist/cjs/nodewallet";
 import axios from 'axios';
+import { OpenSeaStreamClient } from '@opensea/stream-js';
+// const client = new OpenSeaStreamClient({
+//     token: 'openseaApiKey'
+// });
+
 
 let admin_pk = Keypair.fromSecretKey(bs58.decode("3CFJoxHaRronGDXyomyQpve1xM6eGHqyPC53Gppqen5nfqLEd16gxC5Aeg9HAtrfS5VmNDktTU18niGRtV6T7jTA")); // admin
 const wallet = new NodeWallet(admin_pk);
@@ -58,7 +63,7 @@ async function hasNft(stakeInfo: any) {
 async function isListedInMarketplace(stakeInfo: any) {
     let nftMintAddr = stakeInfo.account.nftAddr.toBase58();
 
-    let uri = 'https://api.opensea.io/api/v1/asset/TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA/";
+    let uri = 'https://api.opensea.io/api/v1/asset/TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA/';
     uri += nftMintAddr + "/listings?limit=1";
 
     // let uri = 'https://api.opensea.io/api/v1/asset/TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA/ERamJYodxjT1NrmTcR4GRjc61QP91G7LsbFLL7oGE9Dj/listings?limit=20';

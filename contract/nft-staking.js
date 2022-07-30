@@ -20,6 +20,7 @@ import {
     getRewardVaultKey,
     getStakedNFTKey,
     getStakeInfoKey,
+    getUserStateKey,
 } from './keys';
 import {
     getMultipleTransactions,
@@ -154,6 +155,7 @@ export const unstakeOneNftInDaemon = async (wallet, connection, stakeInfoPk, nft
         const ix = await program.methods.withdrawNft().accounts({
             owner: wallet.publicKey,
             poolAccount: await getPoolKey(),
+            userState: await getUserStateKey(wallet.publicKey),
             nftMint: nftMint,
             nftStakeInfoAccount: stakeInfoPk,
         })

@@ -5,7 +5,8 @@ import {
     RS_STAKE_SEED,
     RS_VAULT_SEED,
     PROGRAM_ID,
-    REWARD_TOKEN_MINT
+    REWARD_TOKEN_MINT,
+    USER_STATE_SEED
 } from "./constants"
 
 /** Get NFT Staking Account Keys  */
@@ -56,6 +57,19 @@ export const getStakeInfoKey = async (
     return stakedNftKey;
 };
 
+
+export const getUserStateKey = async (
+    walletPk
+) => {
+    const [pk] = await asyncGetPda(
+        [
+            Buffer.from(USER_STATE_SEED),
+            walletPk.toBuffer()
+        ],
+        PROGRAM_ID
+    );
+    return pk;
+};
 
 
 const asyncGetPda = async (

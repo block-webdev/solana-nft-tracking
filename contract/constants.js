@@ -17,6 +17,7 @@ export const RS_PREFIX = "snuggle-squad-nft-staking";
 export const RS_STAKEINFO_SEED = "snuggle-squad-stake-info";
 export const RS_STAKE_SEED = "snuggle-squad-nft-staking";
 export const RS_VAULT_SEED = "snuggle-squad-vault";
+export const USER_STATE_SEED = "snuggle-squad-user-state";
 
 export const CLASS_TYPES = [10, 15, 25];
 export const LOCK_DAY = [0, 14, 30];
@@ -33,13 +34,13 @@ export const REWARD_TOKEN_MINT = new PublicKey(
 export const NFT_CREATOR = new PublicKey(
     IS_MAINNET ? 
     "6rQse6Jq81nBork8x9UwccJJh4qokVVSYujhQRuQgnna" : 
-    "HvAoCHHJ2jU6EgBjyQ5C3pYKKvDARiXsnjYqfoTgJf7A"//"2sN9NsV6sSeA3h1qcN5ZcV4gRQYABebJymc5uzLsiPdY"
+    "DGGXhAVcCtbnxSezy1zidCsWaocnJKmVtdqsPgcuK7vV"//"2sN9NsV6sSeA3h1qcN5ZcV4gRQYABebJymc5uzLsiPdY"
 );
 
 export const PROGRAM_ID = new PublicKey(
     IS_MAINNET ? 
     "6RhXNaW1oQYQmjTc1ypb4bEFe1QasPAgEfFNhQ3HnSqo" : 
-    "2dw47d5KvhgyiKtAhJhJGn2d3RbfqD1QBk6qZT8NERbg"
+    "41dEpuTriLhSyqL4HUAtEgzJ2eF4M5USxKW2xgMTaFZ5"
 )
 
 export const INITIALIZER = new PublicKey(
