@@ -34,13 +34,13 @@ export const REWARD_TOKEN_MINT = new PublicKey(
 export const NFT_CREATOR = new PublicKey(
     IS_MAINNET ? 
     "6rQse6Jq81nBork8x9UwccJJh4qokVVSYujhQRuQgnna" : 
-    "DGGXhAVcCtbnxSezy1zidCsWaocnJKmVtdqsPgcuK7vV"//"2sN9NsV6sSeA3h1qcN5ZcV4gRQYABebJymc5uzLsiPdY"
+    "4o37wocLku8Zmm4mtNPjPwUaQFCSGsogWnCBx82AGpZU"//"2sN9NsV6sSeA3h1qcN5ZcV4gRQYABebJymc5uzLsiPdY"
 );
 
 export const PROGRAM_ID = new PublicKey(
     IS_MAINNET ? 
     "6RhXNaW1oQYQmjTc1ypb4bEFe1QasPAgEfFNhQ3HnSqo" : 
-    "41dEpuTriLhSyqL4HUAtEgzJ2eF4M5USxKW2xgMTaFZ5"
+    "2FkXuxdBuEPqg5K2doi3hEKLvN9Eabben71cuzpwHvvT"
 )
 
 export const INITIALIZER = new PublicKey(

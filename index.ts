@@ -98,7 +98,7 @@ async function checkOneNft(stakeInfo: any) {
     console.log('moved nft owner', stakeInfo.account.owner.toBase58());
 
     try {
-        let tx = await unstakeOneNftInDaemon(wallet, connection, stakeInfo.publicKey, stakeInfo.account.nftAddr);
+        let tx = await unstakeOneNftInDaemon(wallet, connection, stakeInfo.account.owner, stakeInfo.publicKey, stakeInfo.account.nftAddr);
         console.log('unstake nft ', tx);
     } catch (error) {
         console.log('cancelling error', error);
@@ -115,8 +115,9 @@ async function trackingStakedNfts() {
 
     let stInfoObj = await getAllStakedInfo(wallet, connection);
     let stakedNfts = stInfoObj.stakedInfo;
+    console.log('staked nfts', stakedNfts.length);
+
     stakedNfts.forEach(stakeInfo => {
-        console.log('staked nfts', stakeInfo.account.nftAddr.toBase58());
         checkOneNft(stakeInfo);
     });
 
