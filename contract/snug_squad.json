@@ -170,12 +170,38 @@
           "isSigner": false
         },
         {
-          "name": "userState",
+          "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "nftStakeInfoAccount",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "ownerWithdrawNft",
+      "accounts": [
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "poolAccount",
           "isMut": true,
           "isSigner": false
         },
         {
           "name": "nftMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "nftAccount",
           "isMut": false,
           "isSigner": false
         },

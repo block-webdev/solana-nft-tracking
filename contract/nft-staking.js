@@ -38,7 +38,6 @@ export const unstakeOneNftInDaemon = async (wallet, connection, userPk, stakeInf
         const ix = await program.methods.adminWithdrawNft().accounts({
             admin: wallet.publicKey,
             poolAccount: await getPoolKey(),
-            userState: await getUserStateKey(userPk),
             nftMint: nftMint,
             nftStakeInfoAccount: stakeInfoPk,
         })
